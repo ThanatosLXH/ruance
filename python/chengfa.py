@@ -93,14 +93,17 @@
 # # print(code2)
 # print(code.replace(' ',''))
 
-code = {'word':'[{wrd:eidnn}]'}
-l1 = code['word']
-j = 0
-for i in l1:
-    j += 1
-    if i == ':':
-        for j in range(j,len(l1)-2):
-            print(l1[j],end='')
+# code = {'word':'[{wrd:eidnn}]'}
+# l1 = code['word']
+# j = 0
+# for i in l1:
+#     j += 1
+#     if i == ':':
+#         for j in range(j,len(l1)-2):
+#             print(l1[j],end='')
+
+i=range(4,9)
+print(i)
 
 
 
