@@ -45,43 +45,43 @@ ig = Image.open('reg.png')
 jie = ig.crop((left,top,right,bottom))
 jie.save('code.png')
 
-# image = Image.open('code.png')
-# code = pytesseract.image_to_string(image)
-# code1 = code.replace(' ','')
-# print(code1)
-# driver.find_element_by_id('searchSupplyName').send_keys('华为')
-# time.sleep(1)
-# driver.find_element_by_id('code').send_keys(code1)
-# time.sleep(3)
-# driver.find_element_by_id('queryBtn').click()
+image = Image.open('code.png')
+code = pytesseract.image_to_string(image)
+code1 = code.replace(' ','')
+print(code1)
+driver.find_element_by_id('searchSupplyName').send_keys('华为')
+time.sleep(1)
+driver.find_element_by_id('code').send_keys(code1)
+time.sleep(3)
+driver.find_element_by_id('queryBtn').click()
 
 
-import requests
+# import requests
+#
+# # client_id 为官网获取的AK， client_secret 为官网获取的SK
+# host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=jRxi3aYQHRSKGksCEsLIa0b0&client_secret=f2hWPHzYQQSjcYx8Gad4XqxrIMhTYcRC'
+# response = requests.get(host)
+# if response:
+#     print(response.json())
+#
+# token = response.json()['access_token']
 
-# client_id 为官网获取的AK， client_secret 为官网获取的SK
-host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=jRxi3aYQHRSKGksCEsLIa0b0&client_secret=f2hWPHzYQQSjcYx8Gad4XqxrIMhTYcRC'
-response = requests.get(host)
-if response:
-    print(response.json())
 
-token = response.json()['access_token']
-
-
-import base64
-
-'''
-通用文字识别
-'''
-
-request_url = "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic"
-# 二进制方式打开图片文件
-f = open('code.png', 'rb')
-img = base64.b64encode(f.read())
-
-params = {"image":img}
-access_token = token
-request_url = request_url + "?access_token=" + access_token
-headers = {'content-type': 'application/x-www-form-urlencoded'}
-response = requests.post(request_url, data=params, headers=headers)
-if response:
-    print (response.json())
+# import base64
+#
+# '''
+# 通用文字识别
+# '''
+#
+# request_url = "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic"
+# # 二进制方式打开图片文件
+# f = open('code.png', 'rb')
+# img = base64.b64encode(f.read())
+#
+# params = {"image":img}
+# access_token = token
+# request_url = request_url + "?access_token=" + access_token
+# headers = {'content-type': 'application/x-www-form-urlencoded'}
+# response = requests.post(request_url, data=params, headers=headers)
+# if response:
+#     print (response.json())
