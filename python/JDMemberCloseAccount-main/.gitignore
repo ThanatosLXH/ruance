@@ -1,0 +1,19 @@
+# Pycharm
+__pycharm__
+.idea/*
+
+# venv
+venv
+
+# drivers
+drivers/chromedriver
+
+# config.yaml.bak
+config.yaml.bak
+
+# logs
+logs
+
+# others
+code_pic.png
+ios_code_pic.png
